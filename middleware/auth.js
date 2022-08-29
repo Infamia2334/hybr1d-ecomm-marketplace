@@ -1,12 +1,13 @@
 const jwt = require('jsonwebtoken');
 const { http } = require('../config');
-const authService = require('../service/authService');
+const authHelper = require('../helpers/tokenHelper');
 
 async function authUser (req, res, next) {
     try {
         const token = req.header('Authorization').replace("Bearer ", "");
         const decoded = jwt.verify(token, process.env.SECRET_JWT);
-        const user = await authService.findUser(decoded);
+        console.log(decoded);
+        const user = await authHelper.findUser(decoded);
         
         req.userData = {
             id: user.id
@@ -22,7 +23,7 @@ async function authUser (req, res, next) {
 }
 
 async function authRole (req, res, next) {
-    
+
 }
 
-module.exports = authUser, authRole;
+module.exports = authUser;

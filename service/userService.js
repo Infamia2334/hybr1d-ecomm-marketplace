@@ -27,3 +27,21 @@ module.exports.login = async function ( userName, password ) {
 
     return { userId: user.id, token };
 }
+
+module.exports.getSellers = async function () {
+    const sellers = await userModel.find({ type: 'seller' });
+
+    if(sellers.length > 0) {
+        let sellerData = sellers.map((seller)=> {
+            return {
+                name: seller.name,
+                type: seller.type,
+                userName: seller.userName,
+                phoneNumber: seller.phoneNumber
+            }
+        });
+        
+        return sellerData;
+    } else
+        throw new Error("Not Found!");
+}
