@@ -3,6 +3,7 @@ __To run the APIs in your localhost:__
 * Run __npm install__ to install all dependencies locally.
 * Create a .env file to create your local environment - add __DATABASE_URL__, __SECRET_JWT__ variables with the mongo connection string and a random secret for JWT Authentication.
 * Use POSTMAN or something similar to put requests to the endpoints given below to try out the API.
+* Use Bearer Tokens in headers for the requests.
 
 
 ### Functionalities:
