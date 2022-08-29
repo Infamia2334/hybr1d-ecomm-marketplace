@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { auth } = require('../../middleware');
+const sellerController = require('../../controller/sellerController');
 
-const buyerController = require('../../controller/buyerController');
-
-router.get('/list-of-sellers', auth , buyerController.getAllSellers);
-
+router.post('/create-catalog', auth, sellerController.createCatalog);
 
 module.exports = router;
