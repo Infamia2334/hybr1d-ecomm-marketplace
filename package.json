@@ -1,0 +1,35 @@
+{
+  "name": "hybr1d-ecomm-marketplace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Infamia2334/hybr1d-ecomm-marketplace.git"
+  },
+  "author": "Dipan Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Infamia2334/hybr1d-ecomm-marketplace/issues"
+  },
+  "homepage": "https://github.com/Infamia2334/hybr1d-ecomm-marketplace#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http": "^0.0.1-security",
+    "i18n": "^0.15.0",
+    "i18n-js": "^3.9.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
