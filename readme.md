@@ -17,20 +17,20 @@ __To run the APIs in your localhost:__
 ### APIs
 
 #### Auth APIs
-__POST /api/v1/auth/register__
+##### POST /api/v1/auth/register
 * Register a user (accept username, password, type of user - buyer/seller)
 POST /api/auth/login
 * Let a previously registered user log in (e.g. retrieve authentication token)
-#### APIs for buyers__
-__GET /api/v1/buyer/list-of-sellers__
+#### APIs for buyers
+##### GET /api/v1/buyer/list-of-sellers
 * Get a list of all sellers
-__GET /api/v1/buyer/seller-catalog/:seller_id__
+##### GET /api/v1/buyer/seller-catalog/:seller_id
 * Get the catalog of a seller by seller_id
-__POST /api/v1/buyer/create-order/:seller_id__
+##### POST /api/v1/buyer/create-order/:seller_id
 * Send a list of items to create an order for seller with id = seller_id
 #### APIs for sellers
-__POST /api/v1/seller/create-catalog__
+##### POST /api/v1/seller/create-catalog
 * Send a list of items to create a catalog for a seller
-__GET /api/v1/seller/orders__
+##### GET /api/v1/seller/orders
 * Retrieve the list of orders received by a seller
  
