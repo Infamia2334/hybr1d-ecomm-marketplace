@@ -27,12 +27,4 @@ async function authUser (req, res, next) {
     }
 }
 
-// async function authRole (req, res, next) {
-//     try {
-//         if(req.userData === "buyer")
-//     } catch (error) {
-        
-//     }
-// }
-
 module.exports = authUser;
