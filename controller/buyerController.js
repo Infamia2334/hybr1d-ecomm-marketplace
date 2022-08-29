@@ -32,6 +32,7 @@ module.exports.getCatalog = async function (req, res) {
             status: { status: true, count: 0 },
         });
     } catch (error) {
+        console.log(error);
         return res.status(http.internalServerError).send({
             message: req.__("api-500"),
             error,

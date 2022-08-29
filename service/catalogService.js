@@ -15,7 +15,7 @@ module.exports.createCatalog = async function (sellerId, products) {
 }
 
 module.exports.getCatalog = async function (sellerId) {
-    const catalog = await catalogModel.findOne(sellerId);
+    const catalog = await catalogModel.findOne({ sellerId });
 
     if(catalog) {
         const catalogProducts = catalog.products.map((product)=> {
