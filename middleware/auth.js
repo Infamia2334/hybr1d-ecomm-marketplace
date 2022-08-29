@@ -6,14 +6,19 @@ async function authUser (req, res, next) {
     try {
         const token = req.header('Authorization').replace("Bearer ", "");
         const decoded = jwt.verify(token, process.env.SECRET_JWT);
-        console.log(decoded);
+        const reqType = req.baseUrl.split('/')[3];
         const user = await authHelper.findUser(decoded);
         
         req.userData = {
-            id: user.id
+            id: user.id,
+            role: user.type
         }
-        next();
+        if(reqType === req.userData.role)
+            next();
+        else
+            throw new Error('Unauthorised Access token !!');
     } catch (error) {
+        console.log(error);
         return res.status(http.unauthorized).send({
             message: ('unauthorizedAPIRequest'),
             error,
@@ -22,8 +27,12 @@ async function authUser (req, res, next) {
     }
 }
 
-async function authRole (req, res, next) {
-
-}
+// async function authRole (req, res, next) {
+//     try {
+//         if(req.userData === "buyer")
+//     } catch (error) {
+        
+//     }
+// }
 
 module.exports = authUser;

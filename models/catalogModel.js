@@ -22,6 +22,10 @@ const catalogSchema = new Schema({
         required : true,
         unique: true
     },
+    buyerId: {
+        type: String,
+        // required: true
+    },
     products: [productSchema]
 }, { timestamps: true });
 

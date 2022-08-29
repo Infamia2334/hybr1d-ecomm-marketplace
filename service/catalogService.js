@@ -20,6 +20,7 @@ module.exports.getCatalog = async function (sellerId) {
     if(catalog) {
         const catalogProducts = catalog.products.map((product)=> {
             return {
+                productId: product.id,
                 name: product.name,
                 price: product.price,
                 description: product.description
